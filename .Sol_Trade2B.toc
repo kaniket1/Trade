@@ -1,7 +1,8 @@
 \select@language {british}
 \contentsline {part}{Part\ 1. \enspace \noindent Micro 2B: International Trade}{1}{part.1}
-\contentsline {chapter}{\tocchapter {\S }{}{Supervision2: International Trade (Tariffs and Quota)}}{3}{chapter*.1}
-\contentsline {chapter}{\tocchapter {\S }{}{Old Questions}}{7}{chapter*.2}
-\contentsline {section}{\tocsection {}{}{2010}}{8}{section*.3}
-\contentsline {section}{\tocsection {}{1}{2011a}}{10}{section.0.1}
-\contentsline {section}{\tocsection {}{}{2011b}}{14}{section*.4}
+\contentsline {chapter}{\tocchapter {\S }{}{New changes for the Fun of it.}}{3}{chapter*.1}
+\contentsline {chapter}{\tocchapter {\S }{}{Supervision2: International Trade (Tariffs and Quota)}}{5}{chapter*.2}
+\contentsline {chapter}{\tocchapter {\S }{}{Old Questions}}{9}{chapter*.3}
+\contentsline {section}{\tocsection {}{}{2010}}{10}{section*.4}
+\contentsline {section}{\tocsection {}{1}{2011a}}{12}{section.0.1}
+\contentsline {section}{\tocsection {}{}{2011b}}{16}{section*.5}
