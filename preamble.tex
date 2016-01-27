@@ -1,0 +1,648 @@
+%\usepackage{amsmath}
+%\usepackage[usenames,dvipsnames]{color}
+%\usepackage[svgnames,x11names]{xcolor}
+\usepackage[usenames,dvipsnames,svgnames,x11names]{xcolor}
+
+\usepackage[bookmarks,colorlinks=true,plainpages=false,citecolor=Mahogany,urlcolor=Mahogany,filecolor=Navy,linkcolor=Mahogany]{hyperref}
+
+\usepackage{psfrag}
+\usepackage{cancel}
+\usepackage{amsmath,amsthm,amssymb,graphics,setspace,url}
+%\usepackage[headings]{fullpage}
+\usepackage{fullpage}
+\usepackage[round]{natbib}
+\usepackage{lipsum}
+
+\usepackage[normalem]{ulem} % \uline{important} \uuline{urgent} \uwave{boat} strikethrough \sout{wrong} \xout{removed} \dashuline{dashing} \dotuline{dotty}
+
+%%% \usepackage{savetrees} %%% Fits as much text as possible in each page
+
+
+\usepackage{fancyhdr}
+\pagestyle{fancyplain}
+\renewcommand{\headrulewidth}{0pt}%
+\renewcommand{\footrulewidth}{0pt}%
+\lhead[]{}
+\chead[]{}
+\rhead[]{}
+\lfoot{}
+\cfoot{\thepage}
+\rfoot{\hyperlink{page.iii}{\tiny $\S$}}
+
+
+% ============
+% = Language =
+% ============
+
+\usepackage[british]{babel} % options: UKenglish,USenglish,english,american
+
+% =========================
+% = Section Chapter Names =
+% =========================
+
+\addto\captionsbritish{\renewcommand{\chaptername}{\S}} %%% changes required this way due to Babel package
+%\addto\captionsbritish{\renewcommand{\sectionname}{\S}} 
+
+% =========
+% = Fonts =
+% =========
+
+\usepackage[utf8]{inputenc}%% especially when using accented letters 
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+%\usepackage{ae,aecompl}
+%\usepackage{pslatex} %%% optional when not using \usepackage{ae,aecompl}. It uses psfonts and does not make the document look very nice.
+
+% =================
+% = Date and Time =
+% =================
+
+\usepackage{datetime}
+%\renewcommand{\dateseparator}{.}
+\settimeformat{ampmtime}
+\newdateformat{UKvardate}{\THEDAY\ \monthname[\THEMONTH], \THEYEAR} %The command \THEMONTH produces an integer value of the current month: for September that would be 9.
+\newdateformat{mydate}{\THEDAY~\monthname[\THEMONTH]~\THEYEAR\\ \grayc{\currenttime}}
+
+% ==========
+% = Tables =
+% ==========
+
+\usepackage{multirow} %%% Multirow 
+
+\usepackage{booktabs}
+% \toprule[⟨wd ⟩] \midrule[⟨wd ⟩] \bottomrule[⟨wd ⟩] \cmidrule(r){1-2}
+
+\usepackage{array}
+% {\setlength{\extrarowheight}{4pt}
+% \begin{tabular}%
+%     {@{}>{\ttfamily}c>{$}c<{$}}
+% \multicolumn{1}{c}{Command} &
+%     \multicolumn{1}{c}{Symbol}\\ \hline
+% alpha & \alpha\\
+% beta & \beta\\
+% gamma & \gamma
+% \end{tabular}}
+% \begin{table}
+% \setlength{\extrarowheight}{4pt}
+% \begin{tabular}{p{3.5cm}@{\hspace{2em}}>{\raggedright\arraybackslash}p{4cm} >{\raggedright\arraybackslash}p{4cm}}
+% 	\toprule
+% & Advantage Individual Liability & Advantage Joint Liability \\ \midrule
+% Costless Monitoring & peer-monitoring less effective  & peer-monitoring more effective  \\
+% Costly Monitoring 	&   & peer-monitoring less-effective \\ \bottomrule
+% \end{tabular}
+% \end{table}
+
+\usepackage{tabularx} % column X is the rest of the column
+% \begin{tabularx}{\linewidth}{lX}
+% Label & Text\\
+% \hline
+% One & This is some text without meaning,
+%   just using up some space. It is not
+%   intended for reading.\\
+% \end{tabularx}
+
+
+% ===============
+% = Math Tricks =
+% ===============
+
+
+% Set this off for article
+%\numberwithin{equation}{chapter} %% changes equation numbering style, can also use section or part.
+
+
+
+%%% Game theory
+%\usepackage{qtree} %%% game theory - draw extensive form games
+
+%%%% use \cfrac{}{} for bigger better brackets
+%%%% use \xleftarrow{t} and \xrightarrow{t}
+%%% Delimiter sizes 
+%% \left \bigl \Bigl \biggl \Biggl 
+%% \right \bigr \Bigr \biggr \Biggr
+
+% Knuth Differentiation operators
+
+
+% \makeatletter
+% \providecommand*{\diff}%
+% 	{\@ifnextchar^{DIfF}{\DIfF^{}}}
+% \def\DIfF^#1{%
+% 	\mathop{\mathrm{\mathstrut d}} %
+% 	\nolimits^{#1}\gobblespace}
+% \def\gobblespace{%
+% 	\futurelet\diffarg\opspace}
+% \def\opspace{%
+% 	\let\DiffSpace\!%
+% 	\ifx\diffarg(%
+% 		\ifx\Diffspace\relax
+% 	\else
+% 		\ifx\diffarg[%
+% 			\let\DiffSpace\relax
+% 		\else
+% 		\ifx\diffarg\{%
+% 			\let\DiffSpace\relax
+% 			\fi\fi\fi\DiffSpace}
+% 		%])}
+% 
+% \providecommand*{\deriv}[3][]{%
+% 	\frac{\dif^{#1}#2}{\diff #3^{#1}}}
+
+\usepackage{ushort} % for shorter underlines in the math mode
+
+% SUB AND SUPERSCRIPT
+\usepackage{turnstile} % allows you the place things on top of each other in the mathmode. e.g. $\nntstile{abc}{def}$ A better way to sign the function is to use the stackrel function, i.e., $\stackrel{+}{w}$ or $X \stackrel{+}{=} Y$. What also seems to work really well is \mathop{w}^{+}_{-}. Mathop works better in the align mode. % Summation \sum integral \int %The amsmath package provides \overset and \underset commands for placing one symbol respectively above or below another. For example, $\overset{G}{\sim}$ or $\overset{\sim}{G}$ 
+
+% DOUBLE LINE SYMBOLS: You can write the symbol of a number set (with double lines) using the mathbb font which is supported by amsfonts or amssymb package. $\mathbb{R}$
+
+\DeclareMathOperator*{\argmax}{arg\,max} % DeclareMathOperator: With \DeclareMathOperator*, subscripts are written beneath log-like symbols in display style and to the right in text style. In contrast, \DeclareMathOperator tells TEX that subscripts should always be displayed to the right of the operator.
+
+% MATH ALPHABETS % \mathbb{R} for the real number set % $\mathrm{ABCdef123}$ % $\mathit{ABCdef123}$ % $\mathnormal{ABCdef123}$ % $\mathcal{ABC}$ and % $\mathpzc{ABCdef123}$ if you put in your preamble % \DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it} %\usepackage{mathrsfs} % use command \mathscr{ABC}
+\usepackage{calrsfs} % use command \mathcal{ABC}
+
+%LLONG ARROW - use \xrightarrow or \xleftarrow comands provided by the amsmath package as in: \[ \xrightarrow{\hspace*{3cm}} \]
+
+\usepackage{caption} % using package caption removes the numbering of the figures, which is useful for making notes of books when you want to number the figure according to the number in the book.
+
+\usepackage{mathtools} % to get square brackets under expressions. \underbracket{abc}
+\let\underbrace\LaTeXunderbrace
+\let\overbrace\LaTeXoverbrace
+
+% BRACKETS 
+%\renewcommand{\underbracket}{\underbracket}
+
+% Invisible brackets can be created using dots. For evaluation brackets, \left. x \right|^{x} ie, $\left.\partdiff{f(x,t)}{x}\right|_{x=x(t)}=0$ 
+
+\usepackage{array} % used to increase the table row height using command \setlength{\extrarowheight}{1.5pt}. Did not work, but the command \renewcommand{\arraystretch}{1.5}  worked better.  
+
+\usepackage{multirow} %%% Adding capability of text spanning rows in tables. For lines use \cline{2-5} that is cline from column 2 to 5.
+
+% COMMON TAG %For common tag across multiple equations, use aligned within align envionment. \begin{align*}	\begin{aligned} eqn1 \\ eqn2 \end{aligned}\tag{Eqn} \end{align*}
+
+%%% Experimentation to Bibliography
+%\def\citeaps#1{\citeauthor{#1} (\citeyear{#1})'s}
+
+% ================
+% = Math Symbols =
+% ================
+
+% \prod for generic multiplication
+
+% FRACTIONS % SLANTED FRACTIONS %  usage of xfrac package is recommended. This package provides \sfrac command to create slanted fractions. $\sfrac{1}{2}$
+\usepackage{xfrac}
+
+% =========================
+% = Horizontal Lines etc. =
+% =========================
+
+%Ways to create a horizontal line. %\begin{center}\line(1,0){250}\end{center} 
+%\noindent\rule{2cm}{0.4pt}
+%\begin{center}\rule{1\textwidth}{0.4pt}\end{center}
+
+
+% =======================================
+% = Section Formatting Through titlesec =
+% =======================================
+
+
+% ========================================
+% = Formatting Title and Titlecase fonts =
+% ========================================
+
+\makeatletter
+\let\uppercasenonmath\@gobble% disables title uppercase
+\let\MakeUppercase\relax% disables author uppercase
+%\let\scshape\relax% disables section smallcaps
+\makeatother
+
+
+% ==================================================
+% = New Definitions like Variables, Note and Aside =
+% ==================================================
+
+\def\note#1{\textcolor{brown}{\footnotesize Note:~\begin{minipage}[t]{0.75075\textwidth}#1~\\\end{minipage}}}
+
+\def\notes#1{\begin{flushright}
+\begin{minipage}[t]{0.6\textwidth}\tiny \textcolor{gray}{#1}~\\\end{minipage}\end{flushright}}
+
+\def\aside#1{\textcolor{gray}{\footnotesize Aside:~\begin{minipage}[t]{0.75075\textwidth}#1~\\\end{minipage}}}
+
+\def\variables#1{\textcolor{Gray}{\footnotesize
+\begin{flushright}
+\begin{minipage}[t]{0.6\textwidth}#1~\\\end{minipage}
+\end{flushright}	
+	}}
+
+\def\varitem#1{\variables{
+\begin{itemize}
+	 #1
+\end{itemize}}}
+
+%%% Definition of \var{}{} with distances in cm 
+ 
+\def\var#1#2{\par
+{\raggedleft\footnotesize \textcolor{gray}
+	{
+	\begin{tabular}[b]{m{4cm}m{9.4cm}}
+	\raggedleft \textcolor{Thistle}{#1}
+	&\begin{minipage}[t]{9.4cm}
+	#2
+	%\rule{0.99\textwidth}{0.01pt}
+	\end{minipage}
+	\end{tabular}\\[1.5ex]
+}}}
+
+\def\varns#1#2{\par
+{\raggedleft\footnotesize \textcolor{gray}
+	{
+	\begin{tabular}[b]{m{4cm}m{9.4cm}}
+	\raggedleft \textcolor{Thistle}{#1}
+	&\begin{minipage}[t]{9.4cm}
+	#2
+	%\rule{0.99\textwidth}{0.01pt}
+	\end{minipage}
+	\end{tabular}\\[-1.5ex]
+}}}
+
+\def\varhalf#1#2{\par
+{\raggedleft\footnotesize \textcolor{gray}
+	{
+	\begin{tabular}[b]{m{4cm}m{9.4cm}}
+	\raggedleft \textcolor{Thistle}{#1}
+	&\begin{minipage}[t]{9.4cm}
+	\onehalfspacing #2
+	%\rule{0.99\textwidth}{0.01pt}
+	\end{minipage}
+	\end{tabular}\\[1.5ex]
+}}}
+
+
+%%% Alternative Definition of \var{}{} with distances in \textwidth. 
+
+% \def\var#1#2{\par
+% {\raggedleft\footnotesize \textcolor{gray}
+% 	{
+% 	\begin{tabular}[b]{m{0.25\textwidth}m{0.6\textwidth}}
+% 	\raggedleft \textcolor{Thistle}{#1}
+% 	&\begin{minipage}[t]{0.6\textwidth}
+% 	#2
+% 	%\rule{0.99\textwidth}{0.01pt}
+% 	\end{minipage}
+% 	\end{tabular}\\[1.5ex]
+% }}}
+
+%%% Alternative Definition of \var{}{} with distance in cm with line at the end. 
+
+\def\varline#1#2{\par
+{\raggedleft\footnotesize \textcolor{gray}
+	{
+	\begin{tabular}[b]{m{4cm}m{9.4cm}|}
+	\raggedleft \textcolor{Thistle}{#1}
+	&\begin{minipage}[t]{9.4cm}
+	#2
+	%\rule{0.99\textwidth}{0.01pt}
+	\end{minipage}
+	\end{tabular}\\[1.5ex]
+}}}
+
+
+% use \var{}{} for two column side notes. First one gives an indication of what the second one is. The second one is the side note.
+
+
+
+
+
+% \def\define#1#2{\begin{minipage}[t]{0.75\textwidth}{
+% \textcolor{RedViolet}{\emph{#1}:~}
+% \textcolor{gray}{#2}}
+% \end{minipage}}
+
+% ======================
+% = Define Environment =
+% ======================
+
+% \def\twocol#1#2{
+% \begin{minipage}[t]{0.5\hsize}
+% 	\textcolor{black}{\footnotesize #1}
+% \end{minipage}\hspace{0.1cm}
+% \begin{minipage}[t]{0.5\hsize}
+% 	\textcolor{gray}{ \footnotesize #2}
+% \end{minipage}\\
+% }
+
+% two column with top alignment
+
+\def\twocolpl#1#2{\hfill
+\begin{minipage}[t]{0.4\textwidth}
+	\textcolor{black}{ #1}
+\end{minipage}\hspace{0.2cm}
+\begin{minipage}[t]{0.4\textwidth}
+	\textcolor{black}{ #2}
+\end{minipage}\\[2ex]
+}
+
+\def\twocol#1#2{\hfill
+\begin{minipage}[t]{0.4\textwidth}
+	\textcolor{black}{\footnotesize #1}
+\end{minipage}\hspace{0.1cm}
+\begin{minipage}[t]{0.45\textwidth}
+	\textcolor{gray}{ \footnotesize #2}
+\end{minipage}\\[2ex]
+}
+
+% two column with middle alignment
+
+\def\twocolm#1#2{\hfill
+\begin{minipage}[m]{0.4\textwidth}
+	\textcolor{black}{\footnotesize #1}
+\end{minipage}\hspace{0.1cm}
+\begin{minipage}[m]{0.45\textwidth}
+	\textcolor{gray}{ \footnotesize #2}
+\end{minipage}\\[2ex]
+}
+
+% Two column for math mode in the first part
+\def\twocolali#1#2{\hfill
+\begin{minipage}[m]{0.4\textwidth}
+	\textcolor{black}{\footnotesize
+	\begin{align*}
+		#1
+	\end{align*}}
+\end{minipage}\hspace{0.1cm}
+\begin{minipage}[m]{0.45\textwidth}
+	\textcolor{gray}{ \footnotesize #2}
+\end{minipage}
+}
+
+% new define based on twocol
+
+\def\define#1#2{\hfill
+\begin{minipage}[m]{0.25\textwidth}
+	\textcolor{RedViolet}{\it #1}
+\end{minipage}\hspace{0.05cm} \textcolor{Lavender}{\vline} \hspace{-0.055cm}
+\begin{minipage}[m]{0.61\textwidth}
+	\textcolor{gray}{ #2}
+\end{minipage}\\[1ex]
+}
+
+\def\defineblack#1#2{\hfill
+\begin{minipage}[m]{0.25\textwidth}
+	\textcolor{RedViolet}{\it #1}
+\end{minipage}\hspace{0.05cm} \textcolor{Lavender}{\vline} \hspace{-0.055cm}
+\begin{minipage}[m]{0.61\textwidth}
+	\textcolor{black}{ #2}
+\end{minipage}\\[1ex]
+}
+
+
+
+%old define
+
+% \def\defin#1#2{
+% \textcolor{gray}{
+% \begin{flushright}
+% \begin{tabular}{m{0.25\textwidth}|m{0.6\textwidth}}
+% 	\raggedright \begin{minipage}[t]{0.25\textwidth}
+% 	\textcolor{RedViolet}{\it  
+% 		  \hfill #1}
+% 	\end{minipage}&
+% 	\begin{minipage}[t]{0.6\textwidth}#2
+% 	\end{minipage}\\
+% \end{tabular}\\[2ex]
+% \end{flushright}
+% 	}}
+	
+% a better way to do define without the flushright command. Use array package to specify column width with m{} so that column is vertically aligned. (all columns have to be vertically aligned with m{} for this to work.) Using the minipage environment in the second column so that breaks can be achaieved with \\. Big improvement is the first columns text wrapping with \raggedleft
+
+% \def\define#1#2{\par\vspace{10pt}
+% {\raggedleft
+% \textcolor{gray}{
+% \begin{tabular}[b]{m{0.25\textwidth}|m{0.6\textwidth}}
+% 	\raggedleft \textcolor{RedViolet}{\it #1} & 
+% 	\begin{minipage}[t]{0.6\textwidth}#2\end{minipage}\\
+% \end{tabular}\vspace{10pt}
+% }}}
+% 	
+% used flushright, tabular (to create the line) and then two minipage environment side by side
+
+
+% \variables{
+% \begin{itemize}
+% 	\item #1
+% \end{itemize}
+% }
+	
+% ====================
+% = Color dvipsnames =
+% ====================
+
+    % Apricot	Aquamarine	Bittersweet	Black
+    % Blue	BlueGreen	BlueViolet	BrickRed
+    % Brown	BurntOrange	CadetBlue	CarnationPink
+    % Cerulean	CornflowerBlue	Cyan	Dandelion
+    % DarkOrchid	Emerald	ForestGreen	Fuchsia
+    % Goldenrod	Gray	Green	GreenYellow
+    % JungleGreen	Lavender	LimeGreen	Magenta
+    % Mahogany	Maroon	Melon	MidnightBlue
+    % Mulberry	NavyBlue	OliveGreen	Orange
+    % OrangeRed	Orchid	Peach	Periwinkle
+    % PineGreen	Plum	ProcessBlue	Purple
+    % RawSienna	Red	RedOrange	RedViolet
+    % Rhodamine	RoyalBlue	RoyalPurple	RubineRed
+    % Salmon	SeaGreen	Sepia	SkyBlue
+    % SpringGreen	Tan	TealBlue	Thistle
+    % Turquoise	Violet	VioletRed	White
+    % WildStrawberry	Yellow	YellowGreen	YellowOrange
+
+
+
+% ==============
+% = Text Color =
+% ==============	
+	
+\def\ale#1{\textcolor{MediumBlue}{#1}}
+\def\alegray#1{\textcolor{gray}{#1}}
+\def\alepurple#1{\textcolor{RoyalPurple}{#1}}
+\def\aleblue#1{\textcolor{Blue}{#1}}
+
+\def\se#1{\textcolor{DarkBlue}{\it #1}}  %%% new from presentations
+
+\def\redc#1{\textcolor{red}{#1}}
+\def\redcb#1{\textcolor{red}{\bf #1}}
+\def\bluec#1{\textcolor{blue}{#1}}
+\def\grayc#1{\textcolor{gray}{#1}}
+\def\graycf#1{\textcolor{gray}{\footnotesize #1}}
+\def\dbluec#1{\textcolor{DarkBlue}{#1}} 
+
+\def\emphc#1{\textcolor{RedViolet}{\emph{#1}}}
+\def\emphd#1{\textcolor{RoyalPurple}{\emph{#1}}}
+
+\def\grt#1{\textcolor{gray}{(t#1)}}
+
+
+
+% \def\notel#1{\textcolor{brown}{\footnotesize $\blacklozenge$ Note: #1}}
+% \def\asidel#1{\textcolor{gray}{\footnotesize $\blacklozenge$ Aside: #1}}
+
+
+% =========================
+% = Customising the Lists =
+% =========================
+
+% THIS IS  ALSO WORKED BUT THE ONE BELOW WAS BETTER
+
+% \let\tempone\itemize
+% \let\temptwo\enditemize
+%\renewenvironment{itemize}{\tempone\addtolength{\itemsep}{0.5\baselineskip}}{\temptwo}
+
+
+\let\OLDitemize\itemize
+\renewcommand\itemize{\OLDitemize\addtolength{\itemsep}{2.5pt}}
+\let\OLDenumerate\enumerate
+\renewcommand\enumerate{\OLDenumerate\addtolength{\itemsep}{2.5pt}}
+\let\OLDdescription\description
+\renewcommand\description{\OLDdescription\addtolength{\itemsep}{2.5pt}}
+
+
+% =================
+% = Defining Math =
+% =================
+\newcommand{\partdiff}[2]{\frac{\partial{#1}}{\partial{#2}}} % defining partial differentiation
+\newcommand{\partdiffcfrac}[2]{\cfrac{\partial{#1}}{\partial{#2}}} % defining partial differentiation - big font
+\newcommand{\partdiffd}[2]{\frac{\partial^2{#1}}{\partial{#2}^2}} % defining double partial differentiation
+\newcommand{\partdiffc}[3]{\frac{\partial^2{#1}}{\partial{#2}\partial{#3}}} % defining double partial differentiation
+
+\newcommand{\diff}[2]{\frac{d{#1}}{d {#2}}} % differentiation
+\newcommand{\diffd}[2]{\frac{d^{2}{#1}}{d {#2}^{2}}} % differentiation
+\newcommand{\st}{\qquad\mbox{s.t.}\qquad} % subject to with align environment 
+\newcommand{\where}{\qquad\mbox{where}\quad} % subject to with align environment 
+
+% ====================
+% = Defining Theorem =
+% ====================
+
+
+% \newtheorem*{theorem}{Theorem}
+% \newtheorem*{lemma}{Lemma}
+% \newtheorem*{proposition}{Proposition}
+% \newtheorem*{corollary}{Corollary}
+% \newtheorem*{defn}{Definition}
+% \newtheorem*{point}{Point}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{defn}{Definition}
+\newtheorem{point}{Point}
+\newtheorem{assn}{Assumption}
+% \newtheorem{proposition}{Proposition}
+% \newtheorem{corollary}{Corollary}
+% \newtheorem{lemma}{Lemma}
+% the theorems use the counter from the section number
+\newtheorem{proposition}{Proposition}%[section]
+\newtheorem*{prop}{Proposition}%[section]
+\newtheorem{corollary}{Corollary}[section]
+\newtheorem{lemma}{Lemma}[section]
+
+
+
+
+% With theorem command  \newtheorem{env_name}{caption}[within], \newtheorem{env_name}[numbered_like]{caption} within defines the numbering counter and numbered_like ensure that all others are numbered like the first env_name. With \newtheorem* no numering is done, so within and numbered_like cannot be used. Best reference: http://www.emerson.emory.edu/services/latex/latex_21.html
+
+
+%%% Math Tricks
+%%% Bracket sizes ( \big( \Big( \bigg( \Bigg(
+
+%%% Relsize is creating problem in compiling, so I have turned it off both relsize and exscale
+
+%\usepackage{relsize} %%%use \mathlarger{} to increase the size of variables with math environments. \mathlarger{}  does the opposite. In text, {\relsize{-2} text} reduces the size of the text by 2 size.
+% \usepackage{exscale} %%% this package scales fonts especially int and works in conjunction with 'relsize'
+
+
+% ==================
+% = Changing Lists =
+% ==================
+
+\usepackage{enumitem}
+%%% [label=\emph{\it\roman*}.),ref=\emph{\roman*}] %%% Use this after start of the enumerate environment
+
+%%% Alternative 
+\renewcommand{\labelenumi}{\footnotesize\alegray{\roman{enumi}.}} % global formatting the enummerate environment
+
+%%% Changing the itemize markers
+
+\renewcommand{\labelitemi}{\textcolor{Thistle}{$\bullet$}}
+\renewcommand{\labelitemii}{\textcolor{Thistle}{$-$}}
+\renewcommand{\labelitemiii}{\textcolor{Thistle}{$\ulcorner$}}
+\renewcommand{\labelitemiv}{\textcolor{Thistle}{$\llcorner$}}
+
+
+% \begin{enumerate}
+% 	\renewcommand{\labelenumi}{\roman{enumi}}
+%   \setcounter{enumi}{4}
+%   \item fifth element
+% \end{enumerate}
+% 
+% where Command	Example
+% \arabic	1, 2, 3 ...
+% \alph	a, b, c ...
+% \Alph	A, B, C ...
+% \roman	i, ii, iii ...
+% \Roman	I, II, III ...
+
+% my use: 
+%\renewcommand{\labelenumi}{\roman{enumi}.} 
+            
+
+% ===========
+% = Spacing =
+% ===========
+
+
+%\singlespacing
+\onehalfspacing
+%\doublespacing
+%\parindent0cm
+%\parskip1ex
+
+
+%\usepackage{subfigure,boxedminipage,listings,minitoc}
+
+% This is now the recommended way for checking for PDFLaTeX:
+\usepackage{ifpdf}
+%\newif\ifpdf
+%\ifx\pdfoutput\undefined
+%\pdffalse % we are not running PDFLaTeX
+%\else
+%\pdfoutput=1 % we are running PDFLaTeX
+%\pdftrue
+%\fi
+
+% \ifpdf
+% \usepackage[pdftex]{graphicx}
+% \else
+ \usepackage{graphicx}
+%\fi
+
+% ==============
+% = Make index =
+% ==============
+
+
+ %\usepackage{makeidx} % Should not use makeidx with amsbook since presumably, it already indexes on it own.
+ \makeindex % use usepackage makeidx once and comment it out to and it seems to work. Don't ask me why?
+
+
+%%% CONTROL TABLE OF CONTENTS AND SECTION NUMBERING
+% \setcounter{secnumdepth}{2}
+ \setcounter{tocdepth}{0}
+% \setcounter{section}{1}
+
+
+% \rule{width}{height}
+\newcommand{\sectionline}{%
+  \nointerlineskip \vspace{\baselineskip}%
+  \hspace{\fill}\rule{1\linewidth}{.25pt}\hspace{\fill}%
+  \par\nointerlineskip \vspace{\baselineskip}
+}
+
+
+%\setcounter{page}{1}
